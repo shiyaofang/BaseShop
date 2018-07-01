@@ -14,32 +14,42 @@ import {
 
 
 import Counter from './source/component/Counter';
+import {
+  createStackNavigator
+} from 'react-navigation';
 
+//页面切换的动画
+import CardStackStyleInterpolator from 'react-navigation/src/views/StackView/StackViewStyleInterpolator';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+import SplashPage from './source/page/SplashPage';
+import IndexPage from './source/page/IndexPage';
 
-type Props = {};
-export default class App extends Component<Props> {
-  render() {
-    return (
-          <View style={styles.container}>
-              <Counter/>
-          </View>
-    );
+const App =createStackNavigator({
+  SplashPage:{
+    screen:SplashPage,
+    navigationOptions:{
+      gesturesEnabled:true,
+      headerTitle:null //去掉react-navigation提供的标题
+    }
+  },
+
+  IndexPage:{
+    screen:IndexPage,
+    navigationOptions:{
+      gesturesEnabled:true,
+      headerTitle:null
+    }
   }
+},{
+
+  mode:'card',//页面切换模式，左右是card,上下是modal
+  headerMode:'none',//导航栏的显示方式，screen有渐变透明效果，float无透明效果，none隐藏导航栏 
+  transitionConfig:()=>({
+         screenInterpolator: CardStackStyleInterpolator.forHorizontal //水平动画
+  })
+
 }
 
-// 样式文件
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-    }
-});
+);
+
+export default App;
