@@ -19,7 +19,7 @@ export default class SplashPage extends React.Component{
 		this.timer=setTimeout(()=>{
 
 			//跳转到下一个界面
-			this.props.navigation.replace('IndexPage');
+			this.props.navigation.replace('MyTab');
 			//移除定时任务
 			this.timer && clearTimeout(this.timer);
 		},2000);

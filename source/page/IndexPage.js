@@ -19,7 +19,7 @@ export default class IndexPage extends Component<Props>{
 
 			<View style={styles.container}>
 				<Text style={{margin:10,fontSize:20,color:'black'}}>
-					首页
+					首页界面嘿嘿嘿
 				</Text>
 			</View>
 		);

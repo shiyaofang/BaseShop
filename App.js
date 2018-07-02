@@ -15,29 +15,72 @@ import {
 
 import Counter from './source/component/Counter';
 import {
-  createStackNavigator
+  createStackNavigator,
+  createBottomTabNavigator
 } from 'react-navigation';
 
 //页面切换的动画
 import CardStackStyleInterpolator from 'react-navigation/src/views/StackView/StackViewStyleInterpolator';
+import Icon from 'react-native-vector-icons/Ionicons';
+import theme from './source/config/theme';
+
+
 
 import SplashPage from './source/page/SplashPage';
 import IndexPage from './source/page/IndexPage';
+import CategoryPage from './source/page/CategoryPage';
+
+
+
+
+const MyTab = createBottomTabNavigator({
+        IndexPage: {
+            screen: IndexPage,
+            navigationOptions: {
+                tabBarLabel: '首页',
+                tabBarIcon: ({focused, tintColor}) => (
+                    <Icon name={`ios-home${focused ? '' : '-outline'}`} size={25} color={tintColor}/>
+                )
+            }
+        },
+        CategoryPage: {
+            screen: CategoryPage,
+            navigationOptions: {
+                tabBarLabel: '分类',
+                tabBarIcon: ({focused, tintColor}) => (
+                    <Icon name={`ios-apps${focused ? '' : '-outline'}`} size={25} color={tintColor}/>
+                )
+            }
+        },
+        
+       
+    }, {
+        tabBarOptions: {
+            // label和icon的前景色 活跃状态下（选中）
+            activeTintColor: theme.primaryColor,
+            // label和icon的背景色 不活跃状态下
+            inactiveBackgroundColor: theme.lightGray,
+            // label和icon的前景色 不活跃状态下(未选中)
+            inactiveTintColor: theme.lightBlack,
+        }
+    }
+);
+
 
 const App =createStackNavigator({
   SplashPage:{
     screen:SplashPage,
     navigationOptions:{
       gesturesEnabled:true,
-      headerTitle:null //去掉react-navigation提供的标题
+      header:null //去掉react-navigation提供的标题
     }
   },
 
-  IndexPage:{
-    screen:IndexPage,
+  MyTab:{
+    screen:MyTab,
     navigationOptions:{
       gesturesEnabled:true,
-      headerTitle:null
+      header:null
     }
   }
 },{
@@ -47,9 +90,9 @@ const App =createStackNavigator({
   transitionConfig:()=>({
          screenInterpolator: CardStackStyleInterpolator.forHorizontal //水平动画
   })
-
 }
-
 );
+
+
 
 export default App;
