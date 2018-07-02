@@ -29,6 +29,9 @@ import theme from './source/config/theme';
 import SplashPage from './source/page/SplashPage';
 import IndexPage from './source/page/IndexPage';
 import CategoryPage from './source/page/CategoryPage';
+import CartPage from './source/page/CartPage';
+import MinePage from './source/page/MinePage';
+
 
 
 
@@ -52,7 +55,24 @@ const MyTab = createBottomTabNavigator({
                 )
             }
         },
-        
+        CartPage: {
+            screen: CartPage,
+            navigationOptions: {
+                tabBarLabel: '购物车',
+                tabBarIcon: ({focused, tintColor}) => (
+                    <Icon name={`ios-cart${focused ? '' : '-outline'}`} size={25} color={tintColor}/>
+                )
+            }
+        },
+        MinePage: {
+            screen: MinePage,
+            navigationOptions: {
+                tabBarLabel: '我的',
+                tabBarIcon: ({focused, tintColor}) => (
+                    <Icon name={`ios-person${focused ? '' : '-outline'}`} size={25} color={tintColor}/>
+                )
+            }
+        }
        
     }, {
         tabBarOptions: {
