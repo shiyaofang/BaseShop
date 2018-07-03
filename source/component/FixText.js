@@ -4,7 +4,7 @@
 import React from 'react';
 import {Text} from 'react-native';
 
-const FitText=(props)=>{
+const FixText=(props)=>{
 	return(
 		<Text {...props} allowFontScaling={false}>
 			{props.children}
@@ -13,4 +13,4 @@ const FitText=(props)=>{
 };
 
 
-export default FitText;
+export default FixText;

@@ -8,7 +8,7 @@ import{
 	StatusBar
 } from 'react-native';
 
-import FitText from '../component/FitText';
+import FixText from '../component/FixText';
 
 
 type Props ={};
@@ -29,9 +29,9 @@ export default class IndexPage extends Component<Props>{
                 </View>
 
 
-                <FitText>
+                <FixText>
                 	首页
-                </FitText>
+                </FixText>
 
 			</View>
 		);

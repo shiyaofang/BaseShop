@@ -32,8 +32,8 @@ import CategoryPage from './source/page/CategoryPage';
 import CartPage from './source/page/CartPage';
 import MinePage from './source/page/MinePage';
 import BrandPage from './source/page/BrandPage';
-import CustomTabBar from './source/component/CustomTabBar';
 import SearchPage from './source/page/SearchPage';
+import CustomTabBar from './source/component/CustomTabBar';
 
 
 const CategoryTab = createMaterialTopTabNavigator({
