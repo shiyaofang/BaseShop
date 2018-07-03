@@ -15,9 +15,12 @@ export default class CartPage extends Component<Props>{
 
 		return(
 			<View style={styles.container}>
-				<Text style={styles.txtStyle}>
-					购物车
-				</Text>
+				<View style={{margin:10,width:40,height:50,backgroundColor:'red'}}/>
+                <View style={{margin:10,width:60,height:50,backgroundColor:'green'}}/>
+                <View style={{margin:10,width:80,height:50,backgroundColor:'blue'}}/>
+                <View style={{margin:10,width:100,height:50,backgroundColor:'black'}}/>
+                <View style={{margin:10,width:100,height:50,backgroundColor:'orange'}}/>
+                <View style={{margin:10,width:40,height:50,backgroundColor:'pink'}}/>
 			</View>
 		);
 	}
@@ -29,8 +32,10 @@ const styles=StyleSheet.create({
 
 		flex:1,
 		backgroundColor:'#F5FCFF',
-		justifyContent:'center',
-		alignItems:'center'
+		justifyContent:'space-around',
+		alignItems:'center',
+		flexDirection:'row',
+		flexWrap:'wrap'
 	},
 
 	txtStyle:{

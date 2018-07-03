@@ -7,6 +7,9 @@ import {
 	Text
 } from 'react-native';
 
+import px2dp from '../utils/px2dp';
+
+
 type Props={};
 
 export default class MinePage extends Component<Props>{
@@ -15,9 +18,7 @@ export default class MinePage extends Component<Props>{
 
 		return(
 			<View style={styles.container}>
-				<Text style={styles.txtStyle}>
-					我的界面
-				</Text>
+				<View style={{width:px2dp(750),height:px2dp(200) ,backgroundColor:'#dadada'}} />
 			</View>
 		);
 	}
