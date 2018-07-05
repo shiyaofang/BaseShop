@@ -1,4 +1,4 @@
-package com.baseshop;
+package com.viva.baseshop;
 
 import com.facebook.react.ReactActivity;
 

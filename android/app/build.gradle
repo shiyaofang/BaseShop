@@ -98,7 +98,7 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "com.baseshop"
+        applicationId "com.viva.baseshop"
         minSdkVersion 16
         targetSdkVersion 22
         versionCode 1
