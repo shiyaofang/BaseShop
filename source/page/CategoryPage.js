@@ -7,10 +7,21 @@ import{
 	View,
 	Text,
 	StatusBar,
-	Platform
+	Platform,
+	FlatList,
+	Image,
+	TouchableOpacity
 } from 'react-native';
 
+import theme from '../config/theme';
+import px2dp from '../utils/px2dp';
+
+
+
 type Props={};
+
+
+let imageResource=[require('../image/category1.png'),require('../image/category2.png'),require('../image/category3.png'),require('../image/category4.png')];
 
 
 export default class CategoryPage extends Component<Props>{
@@ -27,12 +38,31 @@ export default class CategoryPage extends Component<Props>{
 		});
 	}
 
+	//渲染每个条目
+	_renderItemComponent = ({item,index}) =>{
+		return(
+			<View style={{backgroundColor:'#fff',paddingVertical:px2dp(12),alignItems:'center'}}>
+				<TouchableOpacity onPress={this._onItemPress.bind(this,index)}>
+					<Image source={item} />
+				</TouchableOpacity>
+			</View>
+		);
+	}
+
+	// 条目的点击事件
+    _onItemPress(index) {
+        console.log(index)
+    }
 
 	render(){
 		return(
 
 				<View style={styles.container}>
-					<Text style={styles.txtStyle}>类别</Text>
+					<FlatList style={{flex:1}} 
+							  data={imageResource}
+							  renderItem={this._renderItemComponent}
+						      keyExtractor={(item,index) => 'Category'+index}
+					/>
 				</View>				
 		);
 	}
@@ -42,18 +72,10 @@ export default class CategoryPage extends Component<Props>{
 
 const styles=StyleSheet.create({
 
-	container:{
-		flex:1,
-		backgroundColor:'#F5FCFF',
-		justifyContent:'center',
-		alignItems:'center',	
-	},
-
-	txtStyle:{
-		margin:10,
-		fontSize:20,
-		color:'black',
-	}
-
+	container: {
+        flex: 1,
+        backgroundColor: theme.lightGray,
+        paddingTop: px2dp(1)
+    }
 
 });
