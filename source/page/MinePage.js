@@ -18,6 +18,7 @@ import theme from '../config/theme';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import FixText from '../component/FixText';
+import Toast from '../component/Toast';
 
 type Props={};
 
@@ -28,6 +29,12 @@ export default class MinePage extends Component<Props>{
 		this.state={};
 	}
 
+
+	toast(){
+		Toast.show('风一样的男子');
+	}
+
+
 	render(){
 
 		return(
@@ -37,7 +44,7 @@ export default class MinePage extends Component<Props>{
 					style={styles.imgTabBar}>
 
 					<View style={{flexDirection:'row-reverse'}}>
-						<TouchableOpacity style={{paddingRight:px2dp(20),paddingTop:px2dp(16)}}>
+						<TouchableOpacity style={{paddingRight:px2dp(20),paddingTop:px2dp(16)}} onPress={()=>this.toast()}>
 							<Ionicons 
 								name={'ios-settings-outline'}
 								size={28}
