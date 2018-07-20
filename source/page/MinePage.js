@@ -31,7 +31,7 @@ export default class MinePage extends Component<Props>{
 
 
 	toast(){
-		Toast.show('风一样的男子');
+		Toast.show('风一样的男子-陈晓东');
 	}
 
 

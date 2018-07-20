@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">BaseShop</string>
+
+    <string name="CodePushProduction">UYRVFxNmf7Ha7c9zGnn0AQD0aXz37be944fc-c736-4400-93f7-662173f31106</string>
+    <string name="CodePushStaging">r1enOHJnhQFnsbZdBQfASrVBOFCv7be944fc-c736-4400-93f7-662173f31106</string>
+
+
 </resources>
